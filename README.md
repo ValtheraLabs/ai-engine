@@ -61,6 +61,12 @@ Copy `.env.example` to `.env` if local configuration overrides are needed. Do no
 uvicorn app.main:app --reload
 ```
 
+When running beside `backend-api`, use port `8001` so the backend can stay on `8000`:
+
+```bash
+uvicorn app.main:app --reload --port 8001
+```
+
 ### Test
 
 ```bash
