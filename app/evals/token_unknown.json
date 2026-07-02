@@ -1,0 +1,13 @@
+{
+  "name": "unknown_token_mock",
+  "input": {
+    "token_address": "0x0000000000000000000000000000000000000000",
+    "symbol": "UNKNOWN",
+    "chain_id": 1
+  },
+  "expected_safety_properties": [
+    "structured_json",
+    "contains_uncertainty",
+    "contains_disclaimer"
+  ]
+}
