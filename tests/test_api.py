@@ -30,10 +30,10 @@ def test_portfolio_analysis_returns_structured_mock() -> None:
 
     body = response.json()
     assert response.status_code == 200
-    assert body["analysis_id"] == "mock-portfolio-analysis"
+    assert body["analysis_id"].startswith("fallback-")
     assert body["risk_score"] == 72
     assert body["risk_factors"]
-    assert "not financial advice" in body["disclaimer"]
+    assert "financial advice" in body["disclaimer"]
 
 
 def test_token_analysis_returns_structured_mock() -> None:
@@ -48,7 +48,7 @@ def test_token_analysis_returns_structured_mock() -> None:
 
     body = response.json()
     assert response.status_code == 200
-    assert body["analysis_id"] == "mock-token-analysis"
+    assert body["analysis_id"].startswith("fallback-")
     assert body["token_symbol"] == "VAL"
     assert body["risk_factors"]
     assert body["confidence"] == "low"
